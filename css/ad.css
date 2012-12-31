@@ -12,3 +12,16 @@ img, video {
   max-width: 100%;
   height: auto;
 }
+
+/* line 4, ../sass/ad.scss */
+body {
+  margin: 0;
+  padding: 0;
+  background: blue;
+  color: white;
+}
+
+/* line 11, ../sass/ad.scss */
+a {
+  color: white;
+}
