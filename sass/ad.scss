@@ -1,2 +1,13 @@
 @import "breakpoint";
 @import "toolkit";
+
+body {
+  margin: 0;
+  padding: 0;
+  background: blue;
+  color: white;
+}
+
+a {
+  color: white;
+}
