@@ -9,15 +9,6 @@ Copyright
 =============
 Copyright Sam Richard, 2012
 
-[Creative Commons Attribution Non-Commercial Share Alike](http://creativecommons.org/licenses/by-nc-sa/3.0/)
+Copyright under the the [GNU General Public License v3](http://www.gnu.org/licenses/gpl-3.0.html)
 
-Attribution must be given in human-readable source code form in the following form:
-
-```
-Responsive Ads
-Code by Sam Richard
-http://snugug.com
-```
-
-License and attribution subject to change.
-If you would like a separate license, contact me.
+License subject to change.
