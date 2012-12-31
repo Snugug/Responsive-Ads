@@ -1,0 +1,72 @@
+<html>
+  <head>
+    <title>Responsive Ad</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="css/ad.css">
+  </head>
+  <body>
+
+    <a href="http://google.com">
+      <div id="width"></div>
+      <div id="height"></div>
+      <div id="type"></div>
+    </a>
+
+
+    <script type="text/javascript">
+      function setInfo() {
+        var heightID = document.getElementById('height');
+        var widthID = document.getElementById('width');
+
+        var height = 0;
+        var width = 0;
+
+        if (document.body && document.body.offsetWidth) {
+           width = document.body.offsetWidth;
+           height = document.body.offsetHeight;
+        }
+        if (document.compatMode=='CSS1Compat' &&
+              document.documentElement &&
+              document.documentElement.offsetWidth ) {
+           width = document.documentElement.offsetWidth;
+           height = document.documentElement.offsetHeight;
+        }
+        if (window.innerWidth && window.innerHeight) {
+           width = window.innerWidth;
+           height = window.innerHeight;
+        }
+
+        var ratio = width / height;
+
+        heightID.innerHTML = 'Height: ' + window.innerHeight + 'px';
+        widthID.innerHTML = 'Width: ' + window.innerWidth + 'px';
+
+        if (window.matchMedia("(orientation: portrait)").matches) {
+          type.innerHTML = 'Type: Skyscraper';
+        }
+
+        if (window.matchMedia("(orientation: landscape)").matches) {
+          if (ratio > 8) {
+            type.innerHTML = 'Type: Leaderboard';
+          }
+          else if (ratio > 2) {
+            type.innerHTML = 'Type: Banner';
+          }
+          else {
+            type.innerHTML = 'Type: Rectangle';
+          }
+        }
+
+      }
+
+      window.onload = function() {
+        setInfo();
+      }
+
+      window.onresize = function() {
+        setInfo();
+      }
+    </script>
+
+  </body>
+</html>
