@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <title>Responsive Ad Index</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body>
+    <div id="main">
+      <div id="ad-wrapper-1" class="banner">
+        <iframe src="ad.html" frameBorder="0" scrolling="no"></iframe>
+      </div>
+    </div>
+    <div id="sidebar">
+      <div id="ad-wrapper-2" class="banner">
+        <iframe src="ad.html" frameBorder="0" scrolling="no"></iframe>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      function swapAds() {
+        var small = "(max-width: 431px)";
+        var medium = "(min-width: 432px)";
+        var large = "(min-width: 864px)";
+
+        var ad1 = document.getElementById('ad-wrapper-1');
+        var ad2 = document.getElementById('ad-wrapper-2');
+
+        if (window.matchMedia(small).matches) {
+          ad1.className = "banner";
+          ad2.className = "banner";
+        }
+
+        if (window.matchMedia(medium).matches) {
+          ad2.className = "rectangle";
+          ad1.className = "banner";
+        }
+        if (window.matchMedia(large).matches) {
+          ad1.className = "leaderboard";
+          ad2.className = "skyscraper";
+        }
+      }
+
+      window.onload = function() {
+        swapAds();
+      }
+
+      window.onresize = function() {
+        swapAds();
+      }
+    </script>
+  </body>
+</html>
