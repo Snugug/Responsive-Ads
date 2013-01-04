@@ -7,12 +7,12 @@
   <body>
     <div id="main">
       <div id="ad-wrapper-1" class="banner">
-        <iframe src="ad.html" frameBorder="0" scrolling="no"></iframe>
+        <iframe id="YWQx" src="ad.html" frameBorder="0" scrolling="no"></iframe>
       </div>
     </div>
     <div id="sidebar">
       <div id="ad-wrapper-2" class="banner">
-        <iframe src="ad.html" frameBorder="0" scrolling="no"></iframe>
+        <iframe id="YWQy" src="ad.html" frameBorder="0" scrolling="no"></iframe>
       </div>
     </div>
 
@@ -21,6 +21,7 @@
         var small = "(max-width: 431px)";
         var medium = "(min-width: 432px)";
         var large = "(min-width: 864px)";
+        var xl = "(min-width: 1586px)";
 
         var ad1 = document.getElementById('ad-wrapper-1');
         var ad2 = document.getElementById('ad-wrapper-2');
@@ -38,15 +39,35 @@
           ad1.className = "leaderboard";
           ad2.className = "skyscraper";
         }
+        if (window.matchMedia(xl).matches) {
+          ad1.className = "banner";
+          ad2.className = "rectangle";
+        }
       }
 
       window.onload = function() {
         swapAds();
+
+        var iframe = document.getElementById('YWQx');
+        iframe.contentWindow.postMessage(['referrer', window.location.href], 'http://local.ads/');
       }
 
       window.onresize = function() {
         swapAds();
       }
+
+      window.addEventListener("message", function(e) {
+        var eventName = e.data[0];
+        var data      = e.data[1];
+
+        console.log(eventName);
+        console.log(data);
+        switch (eventName) {
+          case 'link':  window.location.href = data;
+                            break;
+        }
+      }, false);
+
     </script>
   </body>
 </html>
