@@ -17,11 +17,26 @@ img, video {
 body {
   margin: 0;
   padding: 0;
-  background: blue;
   color: white;
 }
+/* line 9, ../sass/ad.scss */
+.skyscraper body {
+  background: black;
+}
+/* line 13, ../sass/ad.scss */
+.leaderboard body {
+  background: orange;
+}
+/* line 17, ../sass/ad.scss */
+.rectangle body {
+  background: purple;
+}
+/* line 21, ../sass/ad.scss */
+.banner body {
+  background: blue;
+}
 
-/* line 11, ../sass/ad.scss */
+/* line 26, ../sass/ad.scss */
 a {
   color: white;
 }
