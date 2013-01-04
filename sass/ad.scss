@@ -4,8 +4,23 @@
 body {
   margin: 0;
   padding: 0;
-  background: blue;
   color: white;
+
+  .skyscraper & {
+    background: black;
+  }
+
+  .leaderboard & {
+    background: orange;
+  }
+
+  .rectangle & {
+    background: purple;
+  }
+
+  .banner & {
+    background: blue;
+  }
 }
 
 a {
