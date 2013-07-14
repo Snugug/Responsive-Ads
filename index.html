@@ -1,72 +1,40 @@
 <html>
   <head>
-    <title>Responsive Ad Index</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Responsive Ads</title>
+
+    <link rel="stylesheet" href="style.css">
   </head>
+
   <body>
-    <div id="main">
-      <div id="ad-wrapper-1" class="banner">
-        <iframe id="YWQx" src="ad.html" frameBorder="0" scrolling="no"></iframe>
-      </div>
-    </div>
-    <div id="sidebar">
-      <div id="ad-wrapper-2" class="banner">
-        <iframe id="YWQy" src="ad.html" frameBorder="0" scrolling="no"></iframe>
+
+    <h3>AppNexus</h3>
+    <div class="container">
+      <div class="responsive-ads leaderboard">
+        <SCRIPT SRC="http://ads.cpxinteractive.com/ttj?id=1560204&size=300x250" TYPE="text/javascript"></SCRIPT>
       </div>
     </div>
 
-    <script type="text/javascript">
-      function swapAds() {
-        var small = "(max-width: 431px)";
-        var medium = "(min-width: 432px)";
-        var large = "(min-width: 864px)";
-        var xl = "(min-width: 1586px)";
+    <h3 id="type">Leaderboard</h3>
 
-        var ad1 = document.getElementById('ad-wrapper-1');
-        var ad2 = document.getElementById('ad-wrapper-2');
+    <button id="leaderboard">Leaderboard</button>
+    <button id="slide">Slide</button>
+    <button id="rect">Rectangle</button>
+    <button id="bboard">Billboard</button>
+    <button id="skick">Sidekick</button>
+    <button id="filmv">Fimlstrip: V</button>
+    <button id="filmh">Flimstrip: H</button>
 
-        if (window.matchMedia(small).matches) {
-          ad1.className = "banner";
-          ad2.className = "banner";
-        }
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="main.js"></script>
 
-        if (window.matchMedia(medium).matches) {
-          ad2.className = "rectangle";
-          ad1.className = "banner";
-        }
-        if (window.matchMedia(large).matches) {
-          ad1.className = "leaderboard";
-          ad2.className = "skyscraper";
-        }
-        if (window.matchMedia(xl).matches) {
-          ad1.className = "banner";
-          ad2.className = "rectangle";
-        }
-      }
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
 
-      window.onload = function() {
-        swapAds();
-
-        var iframe = document.getElementById('YWQx');
-        iframe.contentWindow.postMessage(['referrer', window.location.href], 'http://local.ads/');
-      }
-
-      window.onresize = function() {
-        swapAds();
-      }
-
-      window.addEventListener("message", function(e) {
-        var eventName = e.data[0];
-        var data      = e.data[1];
-
-        console.log(eventName);
-        console.log(data);
-        switch (eventName) {
-          case 'link':  window.location.href = data;
-                            break;
-        }
-      }, false);
+      ga('create', 'UA-42450927-1', 'codepen.io');
+      ga('send', 'pageview');
 
     </script>
   </body>

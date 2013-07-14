@@ -1,0 +1,80 @@
+.container {
+  width: 70%; }
+
+.responsive-ads {
+  position: relative;
+  height: 0; }
+
+.responsive-ads iframe {
+  display: block;
+  position: absolute;
+  width: 100% !important;
+  height: 100% !important;
+  top: 0;
+  margin: 0;
+  padding: 0; }
+
+.responsive-ads {
+  width: 100%;
+  -webkit-transition: padding 1s;
+  -moz-transition: padding 1s;
+  -o-transition: padding 1s;
+  transition: padding 1s; }
+
+.leaderboard {
+  padding: 9.27835% 0 0 0; }
+
+.slide {
+  padding: 42.78351% 0 0 0; }
+
+.rectangle {
+  padding: 83.33333% 0 0 0; }
+
+.billboard {
+  padding: 25.7732% 0 0 0; }
+
+.sidekick {
+  padding: 56.70103% 0 0 0; }
+
+.filmv {
+  padding: 200% 0 0 0; }
+
+.filmh {
+  padding: 50% 0 0 0; }
+
+button {
+  position: fixed;
+  right: 10px;
+  width: 100px;
+  height: 25px;
+  border-radius: 5px; }
+
+#type {
+  position: fixed;
+  right: 135px;
+  top: 0;
+  font-family: helvetica;
+  z-index: 100;
+  color: white;
+  text-shadow: 0px 0px 10px black; }
+
+#leaderboard {
+  top: 10px; }
+
+#slide {
+  top: 45px; }
+
+#rect {
+  top: 80px; }
+
+#bboard {
+  top: 115px; }
+
+#skick {
+  top: 150px; }
+
+#filmv {
+  top: 185px; }
+
+#filmh {
+  top: 220px; }
